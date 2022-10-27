@@ -31,34 +31,12 @@ public class User {
   @NotBlank
   @Size(max = 120)
   private String password;
-
   
   @Size(max = 20)
   private String firstName;
 
- 
   @Size(max = 20)
   private String lastName;
-
-  
-  private double monlthyIncome;
-
-  
-  private double expenses;
-
-  
-  private String category;
-
- 
-  private String notes;
-
-  
-  private double datetime;
-
-
-
-
-
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "user_roles", 
@@ -74,17 +52,13 @@ public class User {
     this.email = email;
     this.password = password;
   }
-  public User(String username, String email, String password, String firstName, String lastName, double monlthyIncome, double expenses, String category, String notes, double datetime) {
+  public User(String username, String email, String password, String firstName, String lastName) {
     this.username = username;
     this.email = email;
     this.password = password;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.monlthyIncome = monlthyIncome;
-    this.expenses = expenses;
-    this.category = category;
-    this.notes = notes;
-    this.datetime = datetime;
+
   }
 
   public Long getId() {
@@ -130,35 +104,6 @@ public class User {
   public void setLastName(String lastName) {
       this.lastName = lastName;
   }
-  public double getMonlthyIncome() {
-      return monlthyIncome;
-  }
-  public void setMonlthyIncome(double monlthyIncome) {
-      this.monlthyIncome = monlthyIncome;
-  }
-  public double getExpenses() {
-      return expenses;
-  }
-  public void setExpenses(double expenses) {
-      this.expenses = expenses;
-  }
-  public String getCategory() {
-      return category;
-  }
-  public void setCategory(String category) {
-      this.category = category;
-  }
-  public String getNotes() {
-      return notes;
-  }
-  public void setNotes(String notes) {
-      this.notes = notes;
-  }
-  public double getDatetime() {
-      return datetime;
-  }
-  public void setDatetime(double datetime) {
-      this.datetime = datetime;
-  }
+  
 
 }
